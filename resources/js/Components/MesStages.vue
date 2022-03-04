@@ -13,12 +13,12 @@
               </tr>
           </thead>
           <tbody>
-              <tr class="ligne">
-                  <th class="cols">Ecaste</th>
-                  <th class="cols">Développeur Mobile</th>
-                  <th class="cols">Sophia Antipolis</th>
-                  <th class="cols">France</th>
-                  <th class="cols">Entretien</th>
+              <tr class="ligne" v-for="stage in stages">
+                  <th class="cols">{{stage.entreprise}}</th>
+                  <th class="cols">{{stage.poste}}</th>
+                  <th class="cols">{{stage.ville}}</th>
+                  <th class="cols">{{stage.pays}}</th>
+                  <th class="cols">{{stage.status}}</th>
                   <th class="seeMore">Voir | Editer</th>
               </tr>
           </tbody>
@@ -81,5 +81,6 @@ export default defineComponent({
   components: {
     JetApplicationLogo,
   },
+  props: ["stages"]
 });
 </script>

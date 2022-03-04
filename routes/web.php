@@ -15,6 +15,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::get('/', function () {
+    return Inertia::render('Auth/Login', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\StageController::class, 'index'])->name('dashboard');
+});
+
