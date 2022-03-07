@@ -23,7 +23,7 @@
                   <th class="cols">{{stage.pays}}</th>
                   <th class="cols">{{stage.status}}</th>
                   <th class="seeMore">
-                      <a href=""><img src="img/see.png" alt="See" title="Voir"></a>
+                      <a :href="route('showStage', stage.id)"><img src="img/see.png" alt="See" title="Voir"></a>
                       <a :href="route('editStage', stage.id)"><img src="img/editing.png" alt="Edit" title="Editer"></a>
                       <img src="img/trash.png" alt="Delete" title="Supprimer" @click="deleted(stage.id)">
                   </th>

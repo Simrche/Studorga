@@ -53,7 +53,9 @@ class StageController extends Controller
      */
     public function show($id)
     {
-        //
+        return Inertia::render('showStage', [
+            'stages' => Stage::findOrFail($id),
+        ]);
     }
 
     /**
