@@ -1,7 +1,7 @@
 # Studorga
 
-Projet en laravel et vue pour les étudiants qui recherchent un stage.
-Permet de lister les stages ou l'on a postulé et savoir ou on en est.
+Projet en Laravel et Vue.js pour les étudiants qui recherchent un stage.  
+Permet de lister les stages où l'on a postulé et savoir où l'on en est dans sa recherche.
 
 ### Pour setup le projet :
 
