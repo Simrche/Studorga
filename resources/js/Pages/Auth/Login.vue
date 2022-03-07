@@ -40,8 +40,22 @@
                 </jet-button>
             </div>
         </form>
+
+        <p id="noAccount">Vous n'avez pas de compte ? <a href="/register">Inscrivez-vous !</a></p>
     </jet-authentication-card>
 </template>
+
+<style scoped>
+
+    #noAccount {
+        margin-top: 12px;
+    }
+
+    #noAccount a{
+        color: #6b22e3;
+    }
+
+</style>
 
 <script>
     import { defineComponent } from 'vue'

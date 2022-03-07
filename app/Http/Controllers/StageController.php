@@ -28,7 +28,9 @@ class StageController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('createStage', [
+
+        ]);
     }
 
     /**

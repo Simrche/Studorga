@@ -27,5 +27,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\StageController::class, 'index'])->name('dashboard');
+
+    Route::get('/createStage', [App\Http\Controllers\StageController::class, 'create'])->name('createStage');
 });
 

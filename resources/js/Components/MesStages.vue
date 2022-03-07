@@ -1,5 +1,8 @@
 <template>
   <h2 id="firstTitle">Mes stages :</h2>
+  <div id="addStage">
+      <a :href="route('createStage')">+ Ajouter un stage</a>
+  </div>
   <section id="stage-container">
       <table>
           <thead>
@@ -30,6 +33,26 @@
     #firstTitle {
         font-size: 28px;
         margin: 24px 0 0 24px;
+    }
+
+    #addStage {
+        width: 95%;
+        display: flex;
+        justify-content: right;
+    }
+
+    #addStage a {
+        border: black 2px solid;
+        padding: 8px 16px;
+        color: white;
+        background-color: #6b22e3;
+    }
+
+    #addStage a:hover {
+        background-color: white;
+        border: #6b22e3 2px solid;
+        color: black;
+        transition: 0.15s;
     }
 
     table {
