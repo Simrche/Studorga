@@ -14,9 +14,13 @@
     </div>
     <div class="container">
         <h3>Status :</h3>
-        <p>{{stages.status}}</p>
+        <p v-if="stages.status === 'En attente'"><span class="attente">{{stages.status}}</span></p>
+        <p v-if="stages.status === 'Entretien'"><span class="entretien">{{stages.status}}</span></p>
+        <p v-if="stages.status === 'Accepté'"><span class="accepte">{{stages.status}}</span></p>
+        <p v-if="stages.status === 'Refusé'"><span class="refus">{{stages.status}}</span></p>
     </div>
     <div id="showButton">
+        <a :href="route('dashboard')" class="edit">Retour</a>
         <a @click="deleted(stages.id)" class="delete">Supprimer</a>
         <a :href="route('editStage', stages.id)" class="edit">Editer</a>
     </div>
@@ -60,6 +64,34 @@
         padding: 5px 10px;
         background-color: #6b22e3;
         color: white;
+    }
+
+    .attente {
+        background-color: #6b22e3;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .entretien {
+        background-color: #f7d308;
+        color: black;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .accepte {
+        background-color: #2a8805;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .refus {
+        background-color: #910a00;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
     }
 </style>
 

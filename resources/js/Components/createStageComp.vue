@@ -19,7 +19,7 @@
         </div>
         <div id="status">Status :</div>
         <div id="statusInput">
-            <input type="radio" id="contactChoice1" name="status" value="Attente" v-model="form.status">
+            <input type="radio" id="contactChoice1" name="status" value="En attente" v-model="form.status">
             <label for="contactChoice1">En attente</label>
 
             <input type="radio" id="contactChoice2" name="status" value="Entretien" v-model="form.status">

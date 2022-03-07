@@ -11,7 +11,7 @@
                   <th class="cols">Poste</th>
                   <th class="cols">Ville</th>
                   <th class="cols">Pays</th>
-                  <th class="cols">Reponse</th>
+                  <th class="cols">Status</th>
                   <th class="seeMore">Action</th>
               </tr>
           </thead>
@@ -21,7 +21,10 @@
                   <th class="cols">{{stage.poste}}</th>
                   <th class="cols">{{stage.ville}}</th>
                   <th class="cols">{{stage.pays}}</th>
-                  <th class="cols">{{stage.status}}</th>
+                  <th class="cols" v-if="stage.status === 'En attente'"><span class="attente">{{stage.status}}</span></th>
+                  <th class="cols" v-if="stage.status === 'Entretien'"><span class="entretien">{{stage.status}}</span></th>
+                  <th class="cols" v-if="stage.status === 'Accepté'"><span class="accepte">{{stage.status}}</span></th>
+                  <th class="cols" v-if="stage.status === 'Refusé'"><span class="refus">{{stage.status}}</span></th>
                   <th class="seeMore">
                       <a :href="route('showStage', stage.id)"><img src="img/see.png" alt="See" title="Voir"></a>
                       <a :href="route('editStage', stage.id)"><img src="img/editing.png" alt="Edit" title="Editer"></a>
@@ -76,6 +79,7 @@
     .cols {
         width: 18%;
         text-align: left;
+        font-weight: bold;
     }
 
     thead {
@@ -94,18 +98,46 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        font-weight: bold;
     }
 
     .seeMore img{
         width: 32px;
         height: 32px;
+        cursor: pointer;
     }
-
-
 
     .ligne {
         border-bottom: 1px rgb(177, 177, 177) solid;
         height: 72px;
+    }
+
+    .attente {
+        background-color: #6b22e3;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .entretien {
+        background-color: #f7d308;
+        color: black;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .accepte {
+        background-color: #2a8805;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
+    }
+
+    .refus {
+        background-color: #910a00;
+        color: white;
+        padding: 0 8px;
+        border-radius: 10px;
     }
 </style>
 
