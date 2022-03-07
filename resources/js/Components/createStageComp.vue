@@ -1,33 +1,43 @@
 <template>
     <h2 id="firstTitle">Ajouter un stage :</h2>
-    <form action="">
+    <form action="#">
         <div class="formInputDiv">
             <label for="entreprise">Entreprise :</label>
-            <input type="text" name="entreprise">
+            <input type="text" name="entreprise" id="entreprise" v-model="form.entreprise" autocomplete="off">
         </div>
         <div class="formInputDiv">
             <label for="poste">Poste :</label>
-            <input type="text" name="poste">
+            <input type="text" name="poste" id="poste" v-model="form.poste" autocomplete="off">
         </div>
         <div class="formInputDiv">
             <label for="ville">Ville :</label>
-            <input type="text" name="ville">
+            <input type="text" name="ville" id="ville" v-model="form.ville" autocomplete="off">
         </div>
         <div class="formInputDiv">
             <label for="pays">Pays :</label>
-            <input type="text" name="pays">
+            <input type="text" name="pays" id="pays" v-model="form.pays" autocomplete="off">
         </div>
-        <div class="formInputDiv">
-            <label for="status">Status :</label>
-            <input type="text" name="status">
+        <div id="status">Status :</div>
+        <div id="statusInput">
+            <input type="radio" id="contactChoice1" name="status" value="Attente" v-model="form.status">
+            <label for="contactChoice1">En attente</label>
+
+            <input type="radio" id="contactChoice2" name="status" value="Entretien" v-model="form.status">
+            <label for="contactChoice2">Entretien</label>
+
+            <input type="radio" id="contactChoice3" name="status" value="Refusé" v-model="form.status">
+            <label for="contactChoice3">Refusé</label>
+
+            <input type="radio" id="contactChoice4" name="status" value="Accepté" v-model="form.status">
+            <label for="contactChoice4">Accepté</label>
         </div>
         <div class="formInputDiv">
             <label for="description">Description :</label>
-            <textarea name="description"></textarea>
+            <textarea name="description" id="description" v-model="form.description" autocomplete="off"></textarea>
         </div>
         <div id="formButton">
             <a :href="route('dashboard')" class="cancel">Annuler</a>
-            <input type="submit" value="Ajouter" @click="submit" id="submit">
+            <input type="button" value="Ajouter" @click="submit" id="submit" autocomplete="off">
         </div>
     </form>
 </template>
@@ -78,6 +88,23 @@
         width: 80px;
         cursor: pointer;
     }
+
+    #status {
+        margin-top: 12px;
+    }
+
+    #statusInput {
+        display: flex;
+        align-items: center;
+    }
+
+    #statusInput input {
+        margin-right: 8px;
+    }
+
+    #statusInput label {
+        margin-right: 8px;
+    }
 </style>
 
 <script>
@@ -87,6 +114,23 @@ import JetApplicationLogo from "@/Jetstream/ApplicationLogo.vue";
 export default defineComponent({
   components: {
     JetApplicationLogo,
+  },
+  data() {
+    return {
+      form: this.$inertia.form({
+        entreprise: null,
+        poste: null,
+        ville: null,
+        pays: null,
+        status: null,
+        description: null,
+      }),
+    };
+  },
+  methods: {
+    submit() {
+      this.$inertia.post(this.route("createStagePost"), this.form);
+    },
   },
 });
 </script>

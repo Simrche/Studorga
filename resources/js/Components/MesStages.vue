@@ -12,7 +12,7 @@
                   <th class="cols">Ville</th>
                   <th class="cols">Pays</th>
                   <th class="cols">Reponse</th>
-                  <th class="seeMore">Voir</th>
+                  <th class="seeMore">Action</th>
               </tr>
           </thead>
           <tbody>
@@ -22,7 +22,7 @@
                   <th class="cols">{{stage.ville}}</th>
                   <th class="cols">{{stage.pays}}</th>
                   <th class="cols">{{stage.status}}</th>
-                  <th class="seeMore">Voir | Editer</th>
+                  <th class="seeMore">Voir | Editer | Supprimer</th>
               </tr>
           </tbody>
       </table>
