@@ -33,5 +33,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/createStage', [App\Http\Controllers\StageController::class, 'store'])->name('createStagePost');
 
     Route::post('/deleteStage/{id}', [App\Http\Controllers\StageController::class, 'destroy'])->name('deleteStage');
+
+    Route::get('/editStage/{id}', [App\Http\Controllers\StageController::class, 'edit'])->name('editStage');
+
+    Route::post('/editStage/{id}', [App\Http\Controllers\StageController::class, 'update'])->name('editStagePost');
 });
 

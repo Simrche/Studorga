@@ -22,7 +22,11 @@
                   <th class="cols">{{stage.ville}}</th>
                   <th class="cols">{{stage.pays}}</th>
                   <th class="cols">{{stage.status}}</th>
-                  <th class="seeMore">Voir | Editer | <a @click="deleted(stage.id)" href="#">Supprimer</a></th>
+                  <th class="seeMore">
+                      <a href=""><img src="img/see.png" alt="See" title="Voir"></a>
+                      <a :href="route('editStage', stage.id)"><img src="img/editing.png" alt="Edit" title="Editer"></a>
+                      <img src="img/trash.png" alt="Delete" title="Supprimer" @click="deleted(stage.id)">
+                  </th>
               </tr>
           </tbody>
       </table>
@@ -86,9 +90,18 @@
     }
 
     .seeMore {
-        width: 10%;
-        text-align: center;
+        width: 12%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
+
+    .seeMore img{
+        width: 32px;
+        height: 32px;
+    }
+
+
 
     .ligne {
         border-bottom: 1px rgb(177, 177, 177) solid;

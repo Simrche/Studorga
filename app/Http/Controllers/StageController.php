@@ -64,7 +64,9 @@ class StageController extends Controller
      */
     public function edit($id)
     {
-        //
+        return Inertia::render('editStage', [
+            'stages' => Stage::findOrFail($id),
+        ]);
     }
 
     /**
@@ -76,7 +78,10 @@ class StageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stage = Stage::findOrFail($id);
+
+        $stage->update($request->only("entreprise", "poste", "ville", "pays", "status", "description"));
+        return redirect()->route('dashboard');
     }
 
     /**
