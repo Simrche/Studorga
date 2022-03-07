@@ -22,7 +22,7 @@
                   <th class="cols">{{stage.ville}}</th>
                   <th class="cols">{{stage.pays}}</th>
                   <th class="cols">{{stage.status}}</th>
-                  <th class="seeMore">Voir | Editer | Supprimer</th>
+                  <th class="seeMore">Voir | Editer | <a @click="deleted(stage.id)" href="#">Supprimer</a></th>
               </tr>
           </tbody>
       </table>
@@ -104,6 +104,11 @@ export default defineComponent({
   components: {
     JetApplicationLogo,
   },
-  props: ["stages"]
+  props: ["stages"],
+  methods: {
+    deleted(id) {
+        this.$inertia.post(this.route("deleteStage", id));
+    },
+  }
 });
 </script>

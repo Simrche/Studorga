@@ -87,6 +87,9 @@ class StageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stage = Stage::findOrFail($id);
+        $stage->delete();
+
+        return redirect()->route('dashboard');
     }
 }
