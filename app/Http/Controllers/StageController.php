@@ -17,7 +17,7 @@ class StageController extends Controller
     public function index()
     {
         return Inertia::render('Dashboard', [
-            'stages' => DB::table('stages')->where('user_id','=', 1)->get(),
+            'stages' => DB::table('stages')->get(),
         ]);
     }
 

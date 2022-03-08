@@ -24,7 +24,7 @@
           </thead>
           <tbody>
               <template v-for="stage in stages">
-                <tr class="ligne" v-if="select === 'all' || select === stage.status">
+                <tr class="ligne" v-if="(select === stage.status || select === 'all') && this.$page.props.auth.user.id === stage.user_id">
                     <th class="cols">{{stage.entreprise}}</th>
                     <th class="cols">{{stage.poste}}</th>
                     <th class="cols">{{stage.ville}}</th>
