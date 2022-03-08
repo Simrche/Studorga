@@ -1,5 +1,5 @@
 <template>
-    <h2 id="firstTitle">{{stages.entreprise}} ({{stages.poste}})</h2>
+    <h2 id="firstTitle" @click="session">{{stages.entreprise}} ({{stages.poste}})</h2>
     <div class="container">
         <h3>Ville :</h3>
         <p>{{stages.ville}}</p>
@@ -103,7 +103,7 @@ export default defineComponent({
   components: {
     JetApplicationLogo,
   },
-  props: ['stages'],
+  props: ['stages', 'sessions'],
   data() {
     return {
       form: this.$inertia.form({

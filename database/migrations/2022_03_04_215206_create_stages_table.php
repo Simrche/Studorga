@@ -21,6 +21,7 @@ class CreateStagesTable extends Migration
             $table->string('ville');
             $table->string('status');
             $table->longText('description');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

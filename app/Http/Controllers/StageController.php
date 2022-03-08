@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
 use App\Models\Stage;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
 
 class StageController extends Controller
 {
@@ -16,7 +17,7 @@ class StageController extends Controller
     public function index()
     {
         return Inertia::render('Dashboard', [
-            'stages' => Stage::all(),
+            'stages' => DB::table('stages')->where('user_id','=', 1)->get(),
         ]);
     }
 
@@ -41,7 +42,7 @@ class StageController extends Controller
      */
     public function store(Request $request)
     {
-        Stage::create($request->only("entreprise", "poste", "ville", "pays", "status", "description"));
+        Stage::create($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_id"));
         return redirect()->route('dashboard');
     }
 
@@ -82,7 +83,7 @@ class StageController extends Controller
     {
         $stage = Stage::findOrFail($id);
 
-        $stage->update($request->only("entreprise", "poste", "ville", "pays", "status", "description"));
+        $stage->update($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_id"));
         return redirect()->route('dashboard');
     }
 

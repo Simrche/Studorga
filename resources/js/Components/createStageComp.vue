@@ -117,6 +117,7 @@ export default defineComponent({
   },
   data() {
     return {
+      id: this.$page.props.auth.user.id,
       form: this.$inertia.form({
         entreprise: null,
         poste: null,
@@ -124,12 +125,14 @@ export default defineComponent({
         pays: null,
         status: null,
         description: null,
+        user_id: this.$page.props.auth.user.id
       }),
     };
   },
   methods: {
     submit() {
       this.$inertia.post(this.route("createStagePost"), this.form);
+      console.log(this.id)
     },
   },
 });

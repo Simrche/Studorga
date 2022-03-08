@@ -125,6 +125,7 @@ export default defineComponent({
         pays: this.stages.pays,
         status: this.stages.status,
         description: this.stages.description,
+        user_id: this.$page.props.auth.user.id
       }),
     };
   },

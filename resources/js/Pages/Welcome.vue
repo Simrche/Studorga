@@ -191,6 +191,6 @@
             canRegister: Boolean,
             laravelVersion: String,
             phpVersion: String,
-        }
+        },
     })
 </script>

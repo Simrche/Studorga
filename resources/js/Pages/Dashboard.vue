@@ -29,10 +29,5 @@ export default defineComponent({
     MesStages
   },
   props: ['stages'],
-  methods: {
-      go() {
-          console.log(this.stages)
-      }
-  }
 });
 </script>
