@@ -20,9 +20,9 @@
         <p v-if="stages.status === 'Refusé'"><span class="refus">{{stages.status}}</span></p>
     </div>
     <div id="showButton">
-        <a :href="route('dashboard')" class="edit">Retour</a>
-        <a @click="deleted(stages.id)" class="delete">Supprimer</a>
-        <a :href="route('editStage', stages.id)" class="edit">Editer</a>
+        <jet-nav-link :href="route('dashboard')" class="edit">Retour</jet-nav-link>
+        <jet-nav-link @click="deleted(stages.id)" class="delete">Supprimer</jet-nav-link>
+        <jet-nav-link :href="route('editStage', stages.id)" class="edit">Editer</jet-nav-link>
     </div>
 </template>
 
@@ -98,10 +98,12 @@
 <script>
 import { defineComponent } from "vue";
 import JetApplicationLogo from "@/Jetstream/ApplicationLogo.vue";
+import JetNavLink from "@/Jetstream/NavLink.vue";
 
 export default defineComponent({
   components: {
     JetApplicationLogo,
+    JetNavLink
   },
   props: ['stages', 'sessions'],
   data() {

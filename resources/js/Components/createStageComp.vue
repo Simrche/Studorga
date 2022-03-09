@@ -36,7 +36,7 @@
             <textarea name="description" id="description" v-model="form.description" autocomplete="off"></textarea>
         </div>
         <div id="formButton">
-            <a :href="route('dashboard')" class="cancel">Annuler</a>
+            <jet-nav-link :href="route('dashboard')" class="cancel">Annuler</jet-nav-link>
             <input type="button" value="Ajouter" @click="submit" id="submit" autocomplete="off">
         </div>
     </form>
@@ -75,7 +75,7 @@
         color: white;
         background-color: rgb(155, 0, 0);
         border: black 1px solid;
-        padding: 5px 10px;
+        padding: 5px 10px 5px 10px!important;
         margin-right: 24px;
         width: 80px;
     }
@@ -110,10 +110,12 @@
 <script>
 import { defineComponent } from "vue";
 import JetApplicationLogo from "@/Jetstream/ApplicationLogo.vue";
+import JetNavLink from "@/Jetstream/NavLink.vue";
 
 export default defineComponent({
   components: {
     JetApplicationLogo,
+    JetNavLink
   },
   data() {
     return {

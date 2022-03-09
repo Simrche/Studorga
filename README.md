@@ -12,5 +12,6 @@ Permet de lister les stages où l'on a postulé et savoir où l'on en est dans s
 ``npm install``  
 ``composer install``  
 ``php artisan migrate``  
-``php artisan db:seed``  
+``php artisan db:seed``
+``npm run hot`` 
 ``php artisan serve``  

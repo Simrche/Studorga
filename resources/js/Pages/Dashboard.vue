@@ -28,6 +28,6 @@ export default defineComponent({
     AppLayout,
     MesStages
   },
-  props: ['stages', "session"],
+  props: ['stages'],
 });
 </script>

@@ -1,7 +1,9 @@
 <template>
   <h2 id="firstTitle">Mes stages :</h2>
   <div id="addStage">
-      <a :href="route('createStage')">+ Ajouter un stage</a>
+        <jet-nav-link :href="route('createStage')" class="buttonAdd">
+            + Ajouter un stage
+        </jet-nav-link>
   </div>
   <div id="filter">
       <button :class="computedClassAll" @click="all">Tous</button>
@@ -26,16 +28,16 @@
               <template v-for="stage in stages">
                 <tr class="ligne" v-if="(select === stage.status || select === 'all') && this.$page.props.auth.user.id === stage.user_id">
                     <th class="cols">{{stage.entreprise}}</th>
-                    <th class="cols">{{stage.poste}}</th>
-                    <th class="cols">{{stage.ville}}</th>
-                    <th class="cols">{{stage.pays}}</th>
-                    <th class="cols" v-if="stage.status === 'En attente'"><span class="attente">{{stage.status}}</span></th>
-                    <th class="cols" v-if="stage.status === 'Entretien'"><span class="entretien">{{stage.status}}</span></th>
-                    <th class="cols" v-if="stage.status === 'Accepté'"><span class="accepte">{{stage.status}}</span></th>
-                    <th class="cols" v-if="stage.status === 'Refusé'"><span class="refus">{{stage.status}}</span></th>
+                    <th class="cols noMobile">{{stage.poste}}</th>
+                    <th class="cols noMobile">{{stage.ville}}</th>
+                    <th class="cols noMobile">{{stage.pays}}</th>
+                    <th class="cols noMobile" v-if="stage.status === 'En attente'"><span class="attente">{{stage.status}}</span></th>
+                    <th class="cols noMobile" v-if="stage.status === 'Entretien'"><span class="entretien">{{stage.status}}</span></th>
+                    <th class="cols noMobile" v-if="stage.status === 'Accepté'"><span class="accepte">{{stage.status}}</span></th>
+                    <th class="cols noMobile" v-if="stage.status === 'Refusé'"><span class="refus">{{stage.status}}</span></th>
                     <th class="seeMore">
-                        <a :href="route('showStage', stage.id)"><img src="img/see.png" alt="See" title="Voir"></a>
-                        <a :href="route('editStage', stage.id)"><img src="img/editing.png" alt="Edit" title="Editer"></a>
+                        <jet-nav-link :href="route('showStage', stage.id)"><img src="img/see.png" alt="See" title="Voir"></jet-nav-link>
+                        <jet-nav-link :href="route('editStage', stage.id)"><img src="img/editing.png" alt="Edit" title="Editer"></jet-nav-link>
                         <img src="img/trash.png" alt="Delete" title="Supprimer" @click="deleted(stage.id)">
                     </th>
                 </tr>
@@ -48,10 +50,12 @@
 <script>
 import { defineComponent } from "vue";
 import JetApplicationLogo from "@/Jetstream/ApplicationLogo.vue";
+import JetNavLink from "@/Jetstream/NavLink.vue";
 
 export default defineComponent({
   components: {
     JetApplicationLogo,
+    JetNavLink,
   },
   computed: {
       computedClassAll() {
@@ -142,11 +146,12 @@ export default defineComponent({
         justify-content: right;
     }
 
-    #addStage a {
+    .buttonAdd {
         border: black 2px solid;
         padding: 8px 16px;
         color: white;
         background-color: #6b22e3;
+        cursor: pointer;
     }
 
     #addStage a:hover {
@@ -246,4 +251,7 @@ export default defineComponent({
         padding: 0 8px;
         border-radius: 10px;
     }
+
+
+
 </style>

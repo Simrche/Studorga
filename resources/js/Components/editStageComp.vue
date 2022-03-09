@@ -36,7 +36,7 @@
             <textarea name="description" id="description" v-model="form.description" autocomplete="off"></textarea>
         </div>
         <div id="formButton">
-            <a :href="route('dashboard')" class="cancel">Annuler</a>
+            <jet-nav-link :href="route('dashboard')" class="cancel">Annuler</jet-nav-link>
             <input type="button" value="Ajouter" @click="submit" id="submit" autocomplete="off">
         </div>
     </form>
@@ -110,10 +110,12 @@
 <script>
 import { defineComponent } from "vue";
 import JetApplicationLogo from "@/Jetstream/ApplicationLogo.vue";
+import JetNavLink from "@/Jetstream/NavLink.vue";
 
 export default defineComponent({
   components: {
     JetApplicationLogo,
+    JetNavLink
   },
   props: ['stages'],
   data() {
