@@ -123,7 +123,7 @@ export default defineComponent({
       this.$inertia.post(this.route("createStagePost"), this.form);
     },
     deleted(id) {
-        this.$inertia.post(this.route("deleteStage", id));
+        this.$inertia.delete(this.route("deleteStage", id));
     },
   },
 });

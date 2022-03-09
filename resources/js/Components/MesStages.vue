@@ -97,7 +97,7 @@ export default defineComponent({
   props: ["stages"],
   methods: {
     deleted(id) {
-        this.$inertia.post(this.route("deleteStage", id));
+        this.$inertia.delete(this.route("deleteStage", id));
     },
     all() {
         this.select = "all"

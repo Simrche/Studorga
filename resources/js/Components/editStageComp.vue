@@ -36,7 +36,7 @@
             <textarea name="description" id="description" v-model="form.description" autocomplete="off"></textarea>
         </div>
         <div id="formButton">
-            <jet-nav-link :href="route('dashboard')" class="cancel">Annuler</jet-nav-link>
+            <jet-nav-linka :href="route('dashboard')" class="cancel">Annuler</jet-nav-linka>
             <input type="button" value="Ajouter" @click="submit" id="submit" autocomplete="off">
         </div>
     </form>
@@ -133,8 +133,7 @@ export default defineComponent({
   },
   methods: {
     submit() {
-      this.$inertia.post(
-          this.route("editStagePost", this.stages.id), this.form);
+      this.$inertia.put(this.route("editStagePut", this.stages.id), this.form);
     },
   },
 });
