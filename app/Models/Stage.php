@@ -10,6 +10,6 @@ class Stage extends Model
     use HasFactory;
 
     protected $fillable = [
-        "entreprise", "poste", "ville", "pays", "status", "description", "user_id"
+        "entreprise", "poste", "ville", "pays", "status", "description", "user_email"
     ];
 }

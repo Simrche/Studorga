@@ -127,7 +127,7 @@ export default defineComponent({
         pays: null,
         status: null,
         description: null,
-        user_id: this.$page.props.auth.user.id
+        user_email: this.$page.props.auth.user.email
       }),
     };
   },

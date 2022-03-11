@@ -21,8 +21,12 @@ class CreateStagesTable extends Migration
             $table->string('ville');
             $table->string('status');
             $table->longText('description');
-            $table->integer('user_id');
+            $table->string('user_email');
             $table->timestamps();
+            $table->foreign('user_email')
+            ->references('email')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

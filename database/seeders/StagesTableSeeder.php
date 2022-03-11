@@ -21,7 +21,7 @@ class StagesTableSeeder extends Seeder
             'pays' => 'France',
             'description' => 'Alternance web et mobile, Vue.js/Laravel/Swift/Android Natif',
             'status' => 'Accepté',
-            'user_id' => 1
+            'user_email' => "rochesimon92@gmail.com"
         ]);
 
         DB::table('stages')->insert([
@@ -31,7 +31,7 @@ class StagesTableSeeder extends Seeder
             'pays' => 'France',
             'description' => 'Stage vue.js avec le Skilder et le CNRS',
             'status' => 'En attente',
-            'user_id' => 1
+            'user_email' => "rochesimon92@gmail.com"
         ]);
 
         DB::table('stages')->insert([
@@ -41,7 +41,7 @@ class StagesTableSeeder extends Seeder
             'pays' => 'France',
             'description' => 'Refonte du site web de Hors Cadres en laravue',
             'status' => 'Entretien',
-            'user_id' => 1
+            'user_email' => "rochesimon92@gmail.com"
         ]);
 
         DB::table('stages')->insert([
@@ -51,7 +51,7 @@ class StagesTableSeeder extends Seeder
             'pays' => 'États-Unis',
             'description' => 'Dirigé la plus grande entreprise du monde',
             'status' => 'Refusé',
-            'user_id' => 1
+            'user_email' => "rochesimon92@gmail.com"
         ]);
     }
 }

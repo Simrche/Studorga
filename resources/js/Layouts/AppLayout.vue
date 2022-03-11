@@ -23,6 +23,11 @@
                         Mes Stages
                     </jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <jet-nav-link :href="route('entretien')" :active="route().current('entretien')">
+                        Mes Entretiens
+                    </jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

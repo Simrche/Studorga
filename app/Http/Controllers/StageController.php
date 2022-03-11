@@ -42,7 +42,7 @@ class StageController extends Controller
      */
     public function store(Request $request)
     {
-        Stage::create($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_id"));
+        Stage::create($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_email"));
         return redirect()->route('dashboard');
     }
 
@@ -83,7 +83,7 @@ class StageController extends Controller
     {
         $stage = Stage::findOrFail($id);
 
-        $stage->update($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_id"));
+        $stage->update($request->only("entreprise", "poste", "ville", "pays", "status", "description", "user_email"));
         return redirect()->route('dashboard');
     }
 

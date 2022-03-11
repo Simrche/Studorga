@@ -39,5 +39,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::put('/editStage/{id}', [App\Http\Controllers\StageController::class, 'update'])->name('editStagePut');
 
     Route::get('/stage/{id}', [App\Http\Controllers\StageController::class, 'show'])->name('showStage');
+
+    Route::get('/entretien', [App\Http\Controllers\StageController::class, 'show'])->name('entretien');
 });
 

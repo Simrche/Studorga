@@ -36,8 +36,8 @@
             <textarea name="description" id="description" v-model="form.description" autocomplete="off"></textarea>
         </div>
         <div id="formButton">
-            <jet-nav-linka :href="route('dashboard')" class="cancel">Annuler</jet-nav-linka>
-            <input type="button" value="Ajouter" @click="submit" id="submit" autocomplete="off">
+            <jet-nav-link :href="route('dashboard')" class="cancel">Annuler</jet-nav-link>
+            <input type="button" value="Modifier" @click="submit" id="submit" autocomplete="off">
         </div>
     </form>
 </template>
