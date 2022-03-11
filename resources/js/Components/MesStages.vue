@@ -17,10 +17,10 @@
           <thead>
               <tr>
                   <th class="cols">Entreprise</th>
-                  <th class="cols">Poste</th>
-                  <th class="cols">Ville</th>
-                  <th class="cols">Pays</th>
-                  <th class="cols">Status</th>
+                  <th class="cols noMobile">Poste</th>
+                  <th class="cols noMobile">Ville</th>
+                  <th class="cols noMobile">Pays</th>
+                  <th class="cols noMobile">Status</th>
                   <th class="seeMore">Action</th>
               </tr>
           </thead>
@@ -252,6 +252,22 @@ export default defineComponent({
         border-radius: 10px;
     }
 
+    @media screen and (max-width: 700px) {
+        .noMobile {
+            display: none;
+        }
 
+        .seeMore {
+            width: 50%;
+        }
+
+        .cols {
+            width: 50%;
+        }
+
+        .buttonAdd {
+            margin: 24px 0;
+        }
+    }
 
 </style>
